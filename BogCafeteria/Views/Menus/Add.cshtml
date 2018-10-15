@@ -1,0 +1,85 @@
+﻿@model List<BogCafeteria.Entity_Data.Menu>
+@{
+    ViewBag.Title = "Shopping List";
+}
+<table class="table">
+    <tr>
+        <th>
+            Time
+        </th>
+        <th>
+            Company
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Food type
+        </th>
+        <th>
+            Name
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company1.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product1.Name)
+            </td>
+
+        </tr>
+
+    }
+    <hr>
+    <tr>
+        <th>
+            Total Time
+        </th>
+        <th>
+            Total Price
+        </th>
+    </tr>
+    @{
+        int time = 0;
+        int price = 0;
+        foreach (var item in Model)
+        {
+            time = time + item.Price;
+            price = price + item.Time;
+        }
+    }
+    @{
+        Session["checkOutPrice"] = price;
+        Session["company"] = Model[0].Company1.Id;
+        Session["companyName"] = Model[0].Company1.Name;
+    }
+    
+    <tr>
+        <th>
+            @price
+        </th>
+        <th>
+            @time
+        </th>
+        <th>
+
+            @Html.ActionLink("Checkout", "Sales", "Index", new { id = price })
+            <br />
+            @Html.ActionLink("Add some more", "Index", new { id = Session["company"] })
+        </th>
+    </tr>

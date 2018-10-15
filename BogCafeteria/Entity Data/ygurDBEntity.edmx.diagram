@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="577e8028273d42ebb5bbf2e6ac714872" Name="Diagram1">
+        <EntityTypeShape EntityType="ygurDBModel.Comment" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ygurDBModel.CommentType" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ygurDBModel.Company" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ygurDBModel.CompanyType" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ygurDBModel.Menu" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ygurDBModel.PriceRange" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ygurDBModel.Product" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ygurDBModel.ProductType" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ygurDBModel.Sale" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <AssociationConnector Association="ygurDBModel.FK__Comment__Company__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="ygurDBModel.FK__Comment__Type__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="ygurDBModel.FK__Company__Average__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="ygurDBModel.FK__Company__Type__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="ygurDBModel.FK__Menu__Company__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="ygurDBModel.FK__Sale__Company__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="ygurDBModel.FK__Menu__Category__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="ygurDBModel.FK__Menu__Product__5EBF139D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

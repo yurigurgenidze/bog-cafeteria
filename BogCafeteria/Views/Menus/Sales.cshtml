@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Sales";
+}
+
+
+
+    <h2>Company = @Session["companyName"] </h2>
+    <h2>Price = @Session["checkOutPrice"]</h2>
+    <br />
+    <br />
+    @Html.ActionLink("Buy", "Buy")
+

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BogCafeteria.Entity_Data.Company>
+
+@{
+    ViewBag.Title = "Companies";
+}
+
+<h2>Companies</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logo)
+        </th>
+
+
+        <th>
+            Price Range
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            Registration Date
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            <img src="@item.Logo" alt="Smiley face" height="60" width="60">
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceRange.PriceRange1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyType.Name)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegisterDate)
+        </td>
+        <td>
+            @Html.ActionLink("Products", "Index", "Menus", new { id = item.Id }, null) |
+            @Html.ActionLink("View Comments", "Index", "Comments", new { id = item.Id }, null) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
