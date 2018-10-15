@@ -157,9 +157,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\CompanyTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
-    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ProductTypesController.cs" />
     <Compile Include="Entity Data\Comment.cs">
       <DependentUpon>ygurDBEntity.tt</DependentUpon>
     </Compile>
@@ -273,7 +275,6 @@
     <Content Include="Views\Menus\Edit.cshtml" />
     <Content Include="Views\Menus\Index.cshtml" />
     <Content Include="Views\Menus\Add.cshtml" />
-    <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Menus\Buy.cshtml" />
     <Content Include="Views\Menus\Sales.cshtml" />
     <Content Include="Views\Comments\Create.cshtml" />
@@ -281,6 +282,23 @@
     <Content Include="Views\Comments\Details.cshtml" />
     <Content Include="Views\Comments\Edit.cshtml" />
     <Content Include="Views\Comments\Index.cshtml" />
+    <Content Include="Views\ProductTypes\Create.cshtml" />
+    <Content Include="Views\ProductTypes\Delete.cshtml" />
+    <Content Include="Views\ProductTypes\Details.cshtml" />
+    <Content Include="Views\ProductTypes\Edit.cshtml" />
+    <Content Include="Views\ProductTypes\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\CompanyTypes\Create.cshtml" />
+    <Content Include="Views\CompanyTypes\Delete.cshtml" />
+    <Content Include="Views\CompanyTypes\Details.cshtml" />
+    <Content Include="Views\CompanyTypes\Edit.cshtml" />
+    <Content Include="Views\CompanyTypes\Index.cshtml" />
+    <Content Include="Views\Menus\NoMoney.cshtml" />
+    <Content Include="Views\Home\Adding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

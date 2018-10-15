@@ -48,7 +48,7 @@
             @Html.DisplayFor(modelItem => item.Product1.Name)
         </td>
         <td>
-            @Html.ActionLink("Add to bucket", "Add", new { id = item.Id }) |
+            @Html.ActionLink("Add to cart", "Add", new { id = item.Id }) |
             @Html.ActionLink("View Comments", "Index", "Comments", new { id = item.Company1.Id }, null) |
             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.Id })

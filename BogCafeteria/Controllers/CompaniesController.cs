@@ -12,11 +12,15 @@ namespace BogCafeteria.Controllers
 {
     public class CompaniesController : Controller
     {
+        List<Menu> products = new List<Menu>();
+
         private ygurDBEntities1 db = new ygurDBEntities1();
 
         // GET: Companies
         public ActionResult Index()
         {
+            Session["Menu"] = products;
+
             var companies = db.Companies.Include(c => c.PriceRange).Include(c => c.CompanyType);
             return View(companies.ToList());
         }
@@ -53,7 +57,8 @@ namespace BogCafeteria.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Companies.Add(company);
+                company.RegisterDate = DateTime.Now;
+                db.Companies.Add(company);   
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -119,7 +124,20 @@ namespace BogCafeteria.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Company company = db.Companies.Find(id);
+            
+
+            var comments = db.Comments.Where(Id => Id.Company == id).ToList();
+            var sales = db.Sales.Where(Id => Id.Company == id).ToList();
+            foreach(var comment in comments)
+            {
+                db.Comments.Remove(comment);
+            }
+            foreach (var sale in sales)
+            {
+                db.Sales.Remove(sale);
+            }
             db.Companies.Remove(company);
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

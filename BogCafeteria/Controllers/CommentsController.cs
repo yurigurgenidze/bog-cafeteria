@@ -60,7 +60,11 @@ namespace BogCafeteria.Controllers
             {
                 comment.Company = (int)Session["company"];
                 var commentsList = db.Comments.ToList();
-                var Id = commentsList[commentsList.Count - 1].Id;
+                var Id = 0;
+                if(commentsList.Count != 0)
+                {
+                   Id = commentsList[commentsList.Count - 1].Id;
+                }
                 Id = Id + 1;
                 comment.Id = Id;
                 db.Comments.Add(comment);

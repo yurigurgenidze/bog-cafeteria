@@ -59,8 +59,15 @@
         int price = 0;
         foreach (var item in Model)
         {
-            time = time + item.Price;
-            price = price + item.Time;
+
+            price = price + item.Price;
+        }
+        foreach (var item in Model)
+        {
+            if (item.Time > time)
+            {
+                time = item.Time;
+            }
         }
     }
     @{
@@ -71,10 +78,10 @@
     
     <tr>
         <th>
-            @price
+            @time
         </th>
         <th>
-            @time
+            @price
         </th>
         <th>
 

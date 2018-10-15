@@ -36,7 +36,13 @@ namespace BogCafeteria.Controllers
             Sale sale = new Sale();
             sale.Company = (int)Session["company"];
             sale.Price = (int)Session["checkOutPrice"];
+            if(sale.Price > 24.04)
+            {
+                return View("NoMoney");
+            }
             sale.User = "20";
+            sale.Rating = 5;
+            sale.Date = DateTime.Now;
             db.Sales.Add(sale);
             db.SaveChanges();
             return View();

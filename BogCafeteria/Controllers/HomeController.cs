@@ -9,12 +9,9 @@ using System.Data.Entity;
 namespace BogCafeteria.Controllers
 {
     public class HomeController : Controller {
-        List<Menu> products = new List<Menu>();
-
 
         public ActionResult Index()
         {
-            Session["Menu"] = products;
             return View();
         }
 
@@ -33,6 +30,10 @@ namespace BogCafeteria.Controllers
         }
 
         public ActionResult Buy()
+        {
+            return View();
+        }
+        public ActionResult Adding()
         {
             return View();
         }

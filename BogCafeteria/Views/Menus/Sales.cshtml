@@ -5,9 +5,22 @@
 
 
 
-    <h2>Company = @Session["companyName"] </h2>
-    <h2>Price = @Session["checkOutPrice"]</h2>
-    <br />
-    <br />
-    @Html.ActionLink("Buy", "Buy")
+<h3>Company - @Session["companyName"] </h3>
+<h3>Price - @Session["checkOutPrice"] GEL</h3>
+<h3>
+    Rating
+    <select id="rating" runat="server">>
+
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+
+    </select>
+</h3>
+<br />
+<br />
+
+<h3>@Html.ActionLink("Buy", "Buy")</h3>
 
